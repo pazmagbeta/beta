@@ -1,26 +1,3 @@
-//--------タブ-----------
-let tab_items = [true, false];
-drow_tab();
-function tab(num){
-    if(!tab_items[num]){
-        for(let i = 0; i < tab_items.length; i++){
-            tab_items[i] = false;
-        }
-        tab_items[num] = true;
-        drow_tab();
-    }
-}
-function drow_tab(){
-    for(let i = 0; i < tab_items.length; i++){
-        if(tab_items[i]){
-            document.getElementById("tab_item_" + i).style.backgroundColor = "#fff";
-            document.getElementById("content_"  + i).style.display = "block";
-        }else{
-            document.getElementById("tab_item_" + i).style.backgroundColor = "#d2b48c";
-            document.getElementById("content_"  + i).style.display = "none";
-        }
-    }
-}
 
 //----------計算--------
 let input_num = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
