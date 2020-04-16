@@ -1,0 +1,115 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+body {
+    background: #fff;
+}
+header {
+    background-color: #000;
+}
+#header_logo {
+    font-family: serif;
+    text-align: center;
+    color: white;
+    font-size: 60px;
+    border-bottom: 1px solid #fff;
+}
+:root {
+    --tab_puan: 2;
+}
+#header_menu > p {
+    background-color: #fff;
+}
+#header_menu > a {
+    color: #fff;
+    text-decoration: none;
+}
+#header_menu > a:hover {
+    opacity: 0.6;
+}
+footer {
+    background-color: #000;
+}
+footer > p {
+    margin: 0 auto;
+    color: #fff;
+}
+@media screen and (min-width:360px){
+    :root {
+        --tab_width: 60px;
+    }
+    #header_menu {
+        margin: 0 auto;
+        padding-left: calc(320px - var(--tab_width) * var(--tab_puan));
+        width: calc(var(--tab_width) * var(--tab_puan));
+        height: 20px;
+        list-style: none;
+    }
+    .header_menu_item {
+        width: var(--tab_width);
+        height: 100%;
+        line-height: 20px;
+        font-size: 8px;
+        text-align: center;
+        color: #565656;
+        font-weight: bold;
+        float: left;
+    }
+    .content {
+        margin: 0 auto;
+        width: 360px;
+        height: 480px;
+    }
+    footer {
+        margin: auto;
+        width: 100%;
+        height: 80px;
+        text-align: center;
+    }
+    footer > p {
+        width: calc(320px / 2);
+        padding: 25px 0;
+        font-size: 8px;
+    }
+}
+
+@media screen and (min-width:960px){
+    :root {
+        --tab_width: 120px;
+    }
+    #header_menu {
+        margin: 0 auto;
+        padding-left: calc(960px - var(--tab_width) * var(--tab_puan));
+        width: calc(var(--tab_width) * var(--tab_puan));
+        height: 20px;
+        list-style: none;
+    }
+    .header_menu_item {
+        width: var(--tab_width);
+        height: 100%;
+        line-height: 20px;
+        font-size: 16px;
+        text-align: center;
+        color: #565656;
+        font-weight: bold;
+        float: left;
+    }
+    .content {
+        margin: 0 auto;
+        width: 960px;
+        height: 760px;
+        /* box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); */
+    }
+    footer {
+        margin: auto;
+        width: 100%;
+        height: 80px;
+        text-align: center;
+    }
+    footer > p {
+        width: calc(960px / 2);
+        padding: 16px 0;
+        font-size: 16px;
+    }
+}
