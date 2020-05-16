@@ -18,6 +18,14 @@
         text-align: center;
         /* box-shadow: 4px 4px #ccc; */
     }
+    .kou {
+        background-color: #ccc;
+        padding: 4px;
+        margin: 10px auto;
+        width: 232px;
+        text-align: center;
+        /* box-shadow: 4px 4px #ccc; */
+    }
     #select > ul > li > p {
         font-size: 14px;
         margin: 2px;
