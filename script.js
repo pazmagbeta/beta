@@ -31,22 +31,23 @@ let powor = document.getElementById("powor").value - 0;
         }
     }
 
+
     let result = document.getElementById("result");
 
     result.innerHTML = "<br>" + result.innerHTML;
 
-    if(fif == 1 || ei == 1){
+    if(fif==1&&ei==1){
 		if(malth != 1){
 			result.innerHTML = "マルチ時 " + (kei * malth) + "<br>" + result.innerHTML;
 
       rate = powor * kei * malth;
         }
-        else{
-          rete = powor * kei;
+    else{
+      rate = powor * kei;
         }
         result.innerHTML = "ソロ時 " + kei + "<br>" + result.innerHTML;
 
-        result.innerHTML = "レート" + (rate/140000*100) + "<br>" + result.innerHTML;
+        result.innerHTML = "レート" + (rate/140000*100).toFixed(2) + "<br>" + result.innerHTML;
     }
 
     if(ei != 1){
@@ -61,7 +62,7 @@ let powor = document.getElementById("powor").value - 0;
 		result.innerHTML = "HP80%以下時 " +  kei + "<br>" + result.innerHTML;
         result.innerHTML = "HP80%以上時 " + (kei * ei) + "<br>" + result.innerHTML;
 
-    result.innerHTML = "レート" + (rate/140000*100) + "<br>" + result.innerHTML;
+    result.innerHTML = "レート" + (rate/140000*100).toFixed(2) + "<br>" + result.innerHTML;
     }
 
     if(fif != 1){
@@ -77,7 +78,7 @@ let powor = document.getElementById("powor").value - 0;
         result.innerHTML = "HP50%以上時 " +  kei + "<br>" + result.innerHTML;
         result.innerHTML = "HP50%以下時 " + (kei * fif) + "<br>" + result.innerHTML;
 
-          result.innerHTML = "レート" + (rate/140000*100) + "<br>" + result.innerHTML;
+          result.innerHTML = "レート" + (rate/140000*100).toFixed(2) + "<br>" + result.innerHTML;
     }
     result.innerHTML = ">>" + ++count_num + "<br>" + result.innerHTML;
 });
