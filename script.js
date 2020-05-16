@@ -12,6 +12,8 @@ cal.addEventListener("click", function(){
         input_num[i] = document.getElementById("count_" + i).value - 0;
     }
 
+let powor = document.getElementById("powor").value - 0;
+
     const TWO = 0, HL = 7, FIF = 8, EI = 9, MALTH = 10;
     let kei = 1, fif, ei, malth;
 
@@ -36,26 +38,46 @@ cal.addEventListener("click", function(){
     if(fif == 1 || ei == 1){
 		if(malth != 1){
 			result.innerHTML = "マルチ時 " + (kei * malth) + "<br>" + result.innerHTML;
+
+      powor = powor * kei * malth;
+        }
+        else{
+          powor = powor * kei;
         }
         result.innerHTML = "ソロ時 " + kei + "<br>" + result.innerHTML;
+
+        result.innerHTML = "レート" + (powor/140000*100) + "<br>" + result.innerHTML;
     }
 
     if(ei != 1){
         if(malth != 1){
 			result.innerHTML = "HP80%以下時+マルチ時 " + (kei * malth) + "<br>" + result.innerHTML;
             result.innerHTML = "HP80%以上時+マルチ時 " + (kei * malth * ei) + "<br>" + result.innerHTML;
+        powor = powor*kei * malth * ei;
 		}
+    else {
+        powor = powor * kei * ei;
+    }
 		result.innerHTML = "HP80%以下時 " +  kei + "<br>" + result.innerHTML;
         result.innerHTML = "HP80%以上時 " + (kei * ei) + "<br>" + result.innerHTML;
+
+    result.innerHTML = "レート" + (powor/140000*100) + "<br>" + result.innerHTML;
     }
 
     if(fif != 1){
         if(malth != 1){
             result.innerHTML = "HP50%以上+マルチ時 " + (kei * malth) + "<br>" + result.innerHTML;
             result.innerHTML = "HP50%以下+マルチ時 " + (kei * malth * fif) + "<br>" + result.innerHTML;
+
+            powor = powor*kei * malth * fif;
+        }
+        else {
+            powor = powor * kei * fif;
         }
         result.innerHTML = "HP50%以上時 " +  kei + "<br>" + result.innerHTML;
         result.innerHTML = "HP50%以下時 " + (kei * fif) + "<br>" + result.innerHTML;
+
+          result.innerHTML = "レート" + (powor/140000*100) + "<br>" + result.innerHTML;
     }
     result.innerHTML = ">>" + ++count_num + "<br>" + result.innerHTML;
 });
@@ -85,4 +107,3 @@ function set_num(){
         document.getElementById("count_" + i).options[0].selected = true;
     }
 }
-
