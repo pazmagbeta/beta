@@ -106,4 +106,5 @@ function set_num(){
     for(let i = 0; i < input_num.length; i++){
         document.getElementById("count_" + i).options[0].selected = true;
     }
+document.sampleform.reset();
 }
